@@ -1,3 +1,6 @@
+from storage import load_data,save_data
+from tasks import create_task,add_task,remove_task,mark_done,is_empty
+
 def show_menu():
     print('\nМеню:')
     print('1. Показать задачи')
@@ -22,4 +25,3 @@ def main():
             print("Удалить задачи")
         else:
             print("Не корректный выбор,повторите попытку")
-      
