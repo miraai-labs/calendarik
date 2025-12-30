@@ -8,3 +8,7 @@ def add_task(tasks,name,time=None):
     task = create_task(name,time)
     tasks.append(task)
     return tasks
+def remove_task(tasks,index):
+    if 0 <= index < len(tasks):
+        tasks.pop(index)
+    return tasks
