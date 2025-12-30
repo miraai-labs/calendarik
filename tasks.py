@@ -15,4 +15,5 @@ def remove_task(tasks,index):
 def mark_done(tasks,index):
     if 0 <= index < len(tasks):
         tasks.pop(index)
-    return tasks    
+    return tasks    def is_empty(tasks):
+    return len(tasks) == 0
