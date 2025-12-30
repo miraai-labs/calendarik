@@ -4,3 +4,7 @@ def create_task(name,time=None):
         "time": time,
         "done": False,
     }
+def add_task(tasks,name,time=None):
+    task = create_task(name,time)
+    tasks.append(task)
+    return tasks
