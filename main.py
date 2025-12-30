@@ -1,6 +1,8 @@
 from storage import load_data,save_data
 from tasks import create_task,add_task,remove_task,mark_done,is_empty
 
+tasks = load_data()
+
 def show_menu():
     print('\nМеню:')
     print('1. Показать задачи')
@@ -17,6 +19,14 @@ def main():
             break
         elif otvet == "1":
             print('Показать задачи')
+            tasks = load_data()
+            if is_empty(tasks):
+                print("Список задач пуст")
+            else:
+                for i, task in enumerate(tasks):
+                    status = "✔" if task['done'] else status = "✘"
+                    time = task.get("time","Без времени")
+                    print(f'{i}.{task['name']} [{time}] {status}')
         elif otvet == "2":
             print("Добавить задачи")
         elif otvet == "3":
@@ -25,3 +35,5 @@ def main():
             print("Удалить задачи")
         else:
             print("Не корректный выбор,повторите попытку")
+if __name__ == "__main__":
+    main()
