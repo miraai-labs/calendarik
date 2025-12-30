@@ -22,11 +22,12 @@ def main():
             tasks = load_data()
             if is_empty(tasks):
                 print("Список задач пуст")
+                print("Выберите другой пункт")
             else:
                 for i, task in enumerate(tasks):
-                    status = "✔" if task['done'] else status = "✘"
+                    status = "✔" if task['done'] else "✘"
                     time = task.get("time","Без времени")
-                    print(f'{i}.{task['name']} [{time}] {status}')
+                    print(f'{i}.{task["name"]} [{time}] {status}')
         elif otvet == "2":
             print("Добавить задачи")
         elif otvet == "3":
