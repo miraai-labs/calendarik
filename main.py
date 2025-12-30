@@ -12,13 +12,13 @@ def main():
         if otvet == "0":
             print("Программа завершена")
             break
-        if otvet == "1":
+        elif otvet == "1":
             print('Показать задачи')
-        if otvet == "2":
+        elif otvet == "2":
             print("Добавить задачи")
-        if otvet == "3":
+        elif otvet == "3":
             print("Отметить задачи выполненной")
-        if otvet == "4":
+        elif otvet == "4":
             print("Удалить задачи")
         else:
             print("Не корректный выбор,повторите попытку")
