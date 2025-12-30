@@ -12,3 +12,7 @@ def remove_task(tasks,index):
     if 0 <= index < len(tasks):
         tasks.pop(index)
     return tasks
+def mark_done(tasks,index):
+    if 0 <= index < len(tasks):
+        tasks.pop(index)
+    return tasks    
