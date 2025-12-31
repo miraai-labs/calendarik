@@ -1,7 +1,7 @@
 from storage import load_data,save_data
 from tasks import create_task,add_task,remove_task,mark_done,is_empty
 
-tasks = load_data()
+
 
 def show_menu():
     print('\nМеню:')
@@ -11,6 +11,7 @@ def show_menu():
     print('4. Удалить задачи')
     print('0. Выход')
 def main(): 
+    tasks = load_data()
     while True:
         show_menu()
         otvet = input("Выберите пункт: ")
@@ -30,6 +31,11 @@ def main():
                     print(f'{i}.{task["name"]} [{time}] {status}')
         elif otvet == "2":
             print("Добавить задачи")
+            name = input("Введите название задачи: ")
+            time = input("Введите время (можно оставить пустым): ") or None
+            tasks = add_task(tasks,name,time)
+            save_data(tasks)
+            print("Задача добавлена")
         elif otvet == "3":
             print("Отметить задачи выполненной")
         elif otvet == "4":
